@@ -333,10 +333,11 @@
   }
   .skills-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns:repeat(2, minmax(0, 1fr));
     gap:18px;
   }
   .skill-card{
+    min-height:112px;
     border-radius:14px;
     padding:20px 22px;
     display:flex;
@@ -369,6 +370,37 @@
     height:100%;
     border-radius:999px;
     background:linear-gradient(90deg, var(--water), var(--water-bright));
+  }
+  .skill-link{
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--water);
+    text-decoration:none;
+    overflow-wrap:anywhere;
+  }
+  .skill-link:hover, .skill-link:focus-visible{
+    text-decoration:underline;
+  }
+  /* Skill cards: centered layout */
+  .skill-card{
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:8px;
+  }
+  .skill-card .skill-top{
+    justify-content:center;
+  }
+  .skill-card .skill-name{
+    font-size:clamp(1.2rem, 3vw, 1.45rem);
+    letter-spacing:0.04em;
+  }
+  .skill-card .skill-link{
+    font-size:clamp(0.88rem, 2.2vw, 0.98rem);
+  }
+  @media (max-width:600px){
+    .skill-card{ padding:18px 12px; }
+    .skill-card .skill-name{ font-size:1.1rem; }
   }
   .skill-note{
     font-size:0.8rem;
@@ -715,35 +747,20 @@
       </div>
       <div class="skills-grid">
         <div class="skill-card frost">
-          <div class="skill-top"><span class="skill-name">HTML / CSS</span><span class="skill-pct">95%</span></div>
-          <div class="skill-bar" aria-hidden="true"><span style="width:95%"></span></div>
-          <div class="skill-note">セマンティックなマークアップとレスポンシブ設計</div>
+          <div class="skill-top"><span class="skill-name">プロンプト設計</span></div>
         </div>
         <div class="skill-card frost">
-          <div class="skill-top"><span class="skill-name">JavaScript</span><span class="skill-pct">85%</span></div>
-          <div class="skill-bar" aria-hidden="true"><span style="width:85%"></span></div>
-          <div class="skill-note">DOM操作からAPI連携まで対応</div>
+          <div class="skill-top"><span class="skill-name">文章作成</span></div>
         </div>
         <div class="skill-card frost">
-          <div class="skill-top"><span class="skill-name">React</span><span class="skill-pct">80%</span></div>
-          <div class="skill-bar" aria-hidden="true"><span style="width:80%"></span></div>
-          <div class="skill-note">コンポーネント設計と状態管理</div>
+          <div class="skill-top"><span class="skill-name">Web制作</span></div>
         </div>
         <div class="skill-card frost">
-          <div class="skill-top"><span class="skill-name">Figma</span><span class="skill-pct">78%</span></div>
-          <div class="skill-bar" aria-hidden="true"><span style="width:78%"></span></div>
-          <div class="skill-note">ワイヤーフレームからUIデザインまで</div>
+          <div class="skill-top"><span class="skill-name">Git / GitHub</span></div>
+          <a class="skill-link" href="https://github.com/takeshi358" target="_blank" rel="noopener">github.com/takeshi358 ↗</a>
         </div>
-        <div class="skill-card frost">
-          <div class="skill-top"><span class="skill-name">TypeScript</span><span class="skill-pct">70%</span></div>
-          <div class="skill-bar" aria-hidden="true"><span style="width:70%"></span></div>
-          <div class="skill-note">型安全なアプリケーション開発</div>
-        </div>
-        <div class="skill-card frost">
-          <div class="skill-top"><span class="skill-name">Git / GitHub</span><span class="skill-pct">88%</span></div>
-          <div class="skill-bar" aria-hidden="true"><span style="width:88%"></span></div>
-          <div class="skill-note">チーム開発でのバージョン管理</div>
-        </div>
+        <div class="skill-card frost"></div>
+        <div class="skill-card frost"></div>
       </div>
     </div>
   </section>
@@ -771,7 +788,7 @@
       <a href="#" aria-label="X (Twitter)">
         <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-6.6L4.8 22H1.7l8.1-9.3L1 2h7l4.9 6.1L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg>
       </a>
-      <a href="#" aria-label="GitHub">
+      <a href="https://github.com/takeshi358" target="_blank" rel="noopener" aria-label="GitHub">
         <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.5-1.1-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.3-.3-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7c-.1-.3-.5-1.3.1-2.6 0 0 .9-.3 2.8 1a9.6 9.6 0 0 1 5.1 0c1.9-1.3 2.8-1 2.8-1 .6 1.3.2 2.3.1 2.6a3.9 3.9 0 0 1 1 2.7c0 3.9-2.3 4.7-4.6 5 .4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>
       </a>
       <a href="#" aria-label="Instagram">
